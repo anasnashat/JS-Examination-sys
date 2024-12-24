@@ -7,7 +7,7 @@ const startSection = document.querySelector("#startExam");
 let exam = new ExamController(examPage, nextButton);
 
 startSection.querySelector("button").addEventListener('click', () => {
-    swal(
+    Swal.fire(
         {
             title: "Hi, What is your name?",
             content: "input",
