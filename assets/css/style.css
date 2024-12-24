@@ -1,0 +1,134 @@
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: "Style Script", serif;
+    font-weight: 400;
+    font-style: normal;
+    background: linear-gradient(135deg, #835b30 0%, #c89666 100%);
+    color: #2d545e;
+}
+
+.swal-button--confirm:hover, .swal-button--confirm:focus, .swal-button--confirm:active  {
+    background-color: #835b30; /* Darker Night Blue Shadow */
+    color: #ffffff;
+}
+
+.card {
+    background-color: #e1b382;
+    /*border-radius: 12px;*/
+    /*box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);*/
+    border: 1px solid #c89666;
+    padding: 2px;
+}
+
+button, .swal-button {
+    background-color: #2d545e;
+    color: #ffffff;
+    border: 2px solid #12343b;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+button:hover, .swal-button:hover {
+    background-color: #835b30;
+    color: #ffffff;
+    border: 2px solid #2d545e;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:focus, .swal-button:focus {
+    outline: 3px solid #c89666;
+    outline-offset: 3px;
+    background-color: #2d545e;
+}
+
+
+button:active, .swal-button:active {
+    background-color: #835b30;
+    color: #ffffff;
+    transform: translateY(1px);
+}
+
+button:disabled, .swal-button:disabled {
+    cursor: not-allowed;
+
+}
+
+
+input {
+    border-radius: 8px;
+    padding: 12px 18px;
+    border: 2px solid #2d545e;
+    background-color: #e1b382;
+    color: #2d545e;
+    font-size: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+input:hover {
+    background-color: #c89666;
+    border-color: #12343b;
+    color: #2d545e;
+}
+
+input:focus {
+    border-color: #12343b;
+    outline: none;
+    background-color: #f39945;
+}
+
+
+.is-disabled {
+    background-color: #e7b483;
+    color: #2d545e;
+    border: 2px solid #2d545e;
+}
+
+
+h1, h2, h3, h4 {
+    color: #131f23;
+    font-weight: 600;
+}
+
+.swal-content__input, .swal-content__input:hover,.swal-content__input:focus {
+    background-color: #ffffff;
+
+}
+
+
+
+.swal-modal {
+    background-color: #c89666;
+}
+
+.swal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.swal-text {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.swal-bg {
+    background-color: #e1b382;
+}
+
+.custom-line {
+    border: none;
+    border-top: 2px solid #05171a;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
