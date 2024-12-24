@@ -16,7 +16,7 @@ export class ExamGenerate {
             index = Math.floor(Math.random() * this.questionsArray.length);
             this.questionsArray[index].choices = this.#randomizeChoices(this.questionsArray[index].choices);
             questions.push(this.questionsArray[index]);
-            questions.splice(index, 1);
+            this.questionsArray.splice(index, 1);
 
         } while (questions.length < numberOfQuestions);
         return questions;

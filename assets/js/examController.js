@@ -17,15 +17,19 @@ class ExamController extends ExamGenerate {
         this.duration = 60000;
         this.interval = 100;
         this.bar = null
+        this.timerFlage = false;
     }
 
-
     displayQuestion() {
+        if (!this.#intervalId) {
+            this.#intervalId = this.startTimer()
+        }
+        console.log(this.generateExam)
         this.question = this.generateExam[this.#questionNumber];
         this.questionTitle = document.querySelector('#questionTitle');
         this.questionImage = document.querySelector('#questionImage');
         this.answersContainer = document.querySelector('#answersContainer');
-        this.#intervalId = this.startTimer();
+        // this.#intervalId = this.startTimer();
         this.questionTitle.innerHTML = this.question.question;
         this.questionImage.src = this.question.image;
         this.questionImage.alt = this.question.question;
@@ -60,7 +64,6 @@ class ExamController extends ExamGenerate {
 
     getNextQuestion() {
         const answer = document.querySelector("input.is-disabled");
-        this.stopTimer(this.#intervalId);
         if (answer) {
             console.log(answer.value);
             this.#answers.push(answer.value);
@@ -71,8 +74,10 @@ class ExamController extends ExamGenerate {
 
         this.#questionNumber++;
 
-        if (this.#questionNumber >= this.generateExam.length) {
+        if (this.#questionNumber >= this.generateExam.length || this.timerFlage === true) {
             let grade = new ExamCorrection(this.generateExam, this.#answers);
+            this.stopTimer(this.#intervalId);
+
             grade.correctExam();
             this.examPage.classList.add("d-none");
             console.log(this.#answers);
@@ -114,6 +119,7 @@ class ExamController extends ExamGenerate {
         return setInterval(() => {
             this.timer += this.interval / this.duration;
             if (this.timer > 1.0) {
+                this.timerFlage = true;
                 this.getNextQuestion();
             }
             this.bar.animate(this.timer);

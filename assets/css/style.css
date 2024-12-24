@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     margin: 0;
-    font-family: "Style Script", serif;
+    font-family: "Playwrite CO Guides", serif;
     font-weight: 400;
     font-style: normal;
     background: linear-gradient(135deg, #835b30 0%, #c89666 100%);
@@ -15,7 +15,7 @@ body {
 }
 
 .swal-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #131f23;
 }
@@ -35,7 +35,7 @@ body {
     border: 2px solid #12343b;
     padding: 14px 30px;
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -113,7 +113,7 @@ input {
 
 
 .swal-input, .swal-input:hover, .swal-input:focus{
-    font-size: 1.5rem;
+    font-size: 1rem;
     background-color: #ffffff;
     color: #2d545e;
 }
@@ -140,7 +140,7 @@ input:focus {
 
 h1, h2, h3, h4 {
     color: #131f23;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 
@@ -149,7 +149,7 @@ h1, h2, h3, h4 {
 }
 
 .swal-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 700;
 }
 
