@@ -1,4 +1,4 @@
-import ExamController from './ExamController.js';
+import ExamController from './examController.js';
 
 const examPage = document.querySelector("#examPage");
 const nextButton = document.querySelector("#nextButton");
