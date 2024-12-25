@@ -7,7 +7,6 @@ const startSection = document.querySelector("#startExam");
 let exam = new ExamController(examPage, nextButton);
 
 startSection.querySelector("button").addEventListener('click', () => {
-
     Swal.fire({
         title: "Hi, What is your name?",
         input: "text",
@@ -21,47 +20,62 @@ startSection.querySelector("button").addEventListener('click', () => {
             htmlContainer: "swal-text",
             input: "swal-input",
             confirmButton: "swal-button",
-        }, showClass: {
+        },
+        showClass: {
             popup: 'animate__animated animate__zoomIn',
             backdrop: 'swal2-backdrop-show',
         },
-
+        hideClass: {
+            popup: 'animate__animated animate__zoomOutDown',
+            backdrop: 'swal2-backdrop-hide animate__animated animate__fadeOut animate__fadeOutUp'
+        },
     }).then((result) => {
         if (result.value.trim() !== "") {
-            document.querySelector("#stName").innerHTML += result.value;
-            startSection.classList.add("d-none");
-            examPage.classList.remove("d-none");
-            exam.displayQuestion();
-        } else  {
+            // First animate the current page out
+            startSection.classList.add('animate__animated', 'animate__fadeOutLeft');
+
+            startSection.addEventListener('animationend', () => {
+                startSection.classList.add("d-none");
+                startSection.classList.remove('animate__animated', 'animate__fadeOutLeft');
+
+                document.querySelector("#stName").innerHTML += result.value;
+
+                examPage.classList.remove("d-none");
+                examPage.classList.add('animate__animated', 'animate__fadeInRight');
+
+                examPage.addEventListener('animationend', () => {
+                    examPage.classList.remove('animate__animated', 'animate__fadeInRight');
+                    exam.displayQuestion();
+                }, { once: true });
+
+            }, { once: true });
+
+        } else {
             Swal.fire({
                 title: "Error!",
-                text: "you Should to Enter yor name to start the exam ?  ",
+                text: "You should enter your name to start the exam!",
                 icon: "warning",
-                    customClass: {
-                        popup: "swal-modal animate__animated animate__shakeX",
-                        title: "swal-title animate__animated animate__fadeIn animate__delay-1s",
-                        htmlContainer: "swal-text animate__animated animate__fadeIn animate__delay-1s",
-                        icon: 'animate__animated animate__heartBeat animate__infinite',
-                        confirmButton: "swal-button animate__animated animate__bounceIn animate__delay-1s",
-                    },
-                    showClass: {
-                        popup: 'animate__animated animate__zoomIn',
-                        backdrop: 'swal2-backdrop-show animate__animated animate__fadeIn animate__fadeInDown',
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__zoomOutDown',
-                        backdrop: 'swal2-backdrop-hide animate__animated animate__fadeOut animate__fadeOutUp'
-                    },
-                    iconColor :"white",
+                customClass: {
+                    popup: "swal-modal animate__animated animate__shakeX",
+                    title: "swal-title animate__animated animate__fadeIn animate__delay-1s",
+                    htmlContainer: "swal-text animate__animated animate__fadeIn animate__delay-1s",
+                    icon: 'animate__animated animate__heartBeat animate__infinite',
+                    confirmButton: "swal-button animate__animated animate__bounceIn animate__delay-1s",
+                },
+                showClass: {
+                    popup: 'animate__animated animate__zoomIn',
+                    backdrop: 'swal2-backdrop-show animate__animated animate__fadeIn animate__fadeInDown',
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__zoomOutDown',
+                    backdrop: 'swal2-backdrop-hide animate__animated animate__fadeOut animate__fadeOutUp'
+                },
+                iconColor: "white",
                 allowOutsideClick: false,
-
-
             });
         }
     });
-
-})
-
+});
 
 examPage.addEventListener("click", (event) => {
     exam.choiceAnswer(event);
