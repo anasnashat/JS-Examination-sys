@@ -33,7 +33,7 @@ const questions = [
         question: 'What was the ancient Egyptian name for their country?',
         choices: ["Kemet", "Misr", "Aegyptus", "Nubia"],
         correctAnswer: "Kemet",
-        image: "assets/images/egypt.png",
+        image: "assets/images/nile.png",
     },
     {
         question: 'Which monument has the head of a human and body of a lion?',
