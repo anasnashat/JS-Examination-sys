@@ -21,8 +21,11 @@ startSection.querySelector("button").addEventListener('click', () => {
             htmlContainer: "swal-text",
             input: "swal-input",
             confirmButton: "swal-button",
-            cancelButton: "swal-button",
+        }, showClass: {
+            popup: 'animate__animated animate__zoomIn',
+            backdrop: 'swal2-backdrop-show',
         },
+
     }).then((result) => {
         if (result.value.trim() !== "") {
             document.querySelector("#stName").innerHTML += result.value;
@@ -33,15 +36,25 @@ startSection.querySelector("button").addEventListener('click', () => {
             Swal.fire({
                 title: "Error!",
                 text: "you Should to Enter yor name to start the exam ?  ",
-                icon: "error",
-                customClass: {
-                    popup: "swal-modal",
-                    title: "swal-title",
-                    htmlContainer: "swal-text",
-                    input: "swal-input",
-                    confirmButton: "swal-button",
-                    cancelButton: "swal-button",
-                },
+                icon: "warning",
+                    customClass: {
+                        popup: "swal-modal animate__animated animate__shakeX",
+                        title: "swal-title animate__animated animate__fadeIn animate__delay-1s",
+                        htmlContainer: "swal-text animate__animated animate__fadeIn animate__delay-1s",
+                        icon: 'animate__animated animate__heartBeat animate__infinite',
+                        confirmButton: "swal-button animate__animated animate__bounceIn animate__delay-1s",
+                    },
+                    showClass: {
+                        popup: 'animate__animated animate__zoomIn',
+                        backdrop: 'swal2-backdrop-show animate__animated animate__fadeIn animate__fadeInDown',
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__zoomOutDown',
+                        backdrop: 'swal2-backdrop-hide animate__animated animate__fadeOut animate__fadeOutUp'
+                    },
+                    iconColor :"white",
+                allowOutsideClick: false,
+
 
             });
         }
