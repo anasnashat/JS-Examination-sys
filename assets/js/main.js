@@ -31,26 +31,30 @@ startSection.querySelector("button").addEventListener('click', () => {
         },
     }).then((result) => {
         if (result.value.trim() !== "") {
-            // First animate the current page out
-            startSection.classList.add('animate__animated', 'animate__fadeOutLeft');
+            // Animate the current page out with a fade-out effect
+            startSection.classList.add('animate__animated', 'animate__fadeOut');
 
             startSection.addEventListener('animationend', () => {
                 startSection.classList.add("d-none");
-                startSection.classList.remove('animate__animated', 'animate__fadeOutLeft');
+                startSection.classList.remove('animate__animated', 'animate__fadeOut');
 
+                // Add the user's name smoothly with a fade-in effect
                 document.querySelector("#stName").innerHTML += result.value;
+                document.querySelector("#stName").classList.add('animate__animated', 'animate__fadeIn');
 
                 examPage.classList.remove("d-none");
-                examPage.classList.add('animate__animated', 'animate__fadeInRight');
 
-                examPage.addEventListener('animationend', () => {
-                    examPage.classList.remove('animate__animated', 'animate__fadeInRight');
-                    exam.displayQuestion();
-                }, { once: true });
+                // Animate the exam page with a smooth scaling and fading effect
+                examPage.classList.add('animate__animated', 'animate__fadeIn', 'animate__zoomIn');
+                exam.displayQuestion();
+
+
+
 
             }, { once: true });
 
-        } else {
+        }
+    else {
             Swal.fire({
                 title: "Error!",
                 text: "You should enter your name to start the exam!",

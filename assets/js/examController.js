@@ -24,7 +24,7 @@ class ExamController extends ExamGenerate {
         if (!this.#intervalId) {
             this.#intervalId = this.startTimer()
         }
-        console.log(this.generateExam)
+        // console.log(this.generateExam)
         this.question = this.generateExam[this.#questionNumber];
         this.questionTitle = document.querySelector('#questionTitle');
         this.questionImage = document.querySelector('#questionImage');
@@ -34,7 +34,7 @@ class ExamController extends ExamGenerate {
         this.questionImage.src = this.question.image;
         this.questionImage.alt = this.question.question;
         this.questionImage.style.width = "450px";
-        this.questionImage.style.height = "150px";
+        this.questionImage.style.height = "130px";
 
         this.answersContainer.innerHTML = '';
 
@@ -45,7 +45,7 @@ class ExamController extends ExamGenerate {
             this.choiceInput.id = `choice${index + 1}`;
             this.choiceInput.name = 'choices';
             this.choiceInput.value = choice;
-            this.choiceInput.classList.add('w-100', 'pt-1', 'mb-1', 'h4', 'fs-50');
+            this.choiceInput.classList.add('w-100', 'pt-1', 'mb-1', 'h4', 'fs-10');
             this.answersContainer.append(this.choiceInput);
         });
         this.nextButton.disabled = true;
@@ -91,38 +91,54 @@ class ExamController extends ExamGenerate {
     }
 
     startProgress(timerId) {
-
         return new ProgressBar.Line(timerId, {
-            strokeWidth: 4,
+            strokeWidth: 8,
             easing: 'easeInOut',
             duration: this.interval,
-            trailColor: '#eee',
-            trailWidth: 1,
-            svgStyle: {width: '100%', height: '15px', borderRadius: '15px'},
+            trailColor: '#f0f0f0',
+            trailWidth: 8,
+            svgStyle: {
+                width: '100%',
+                height: '25px',
+                borderRadius: '10px',
+                padding: '1px'
+            },
             text: {
                 style: {
-                    fontSize: '14px',
-
-                }
+                    color: '#000000',
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    fontFamily: 'Arial',
+                    position: 'absolute',
+                    left: '50%',
+                    top: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    margin: 0,
+                    padding: 0,
+                },
+                autoStyleContainer: true
             },
             from: {color: '#00FF00'},
-            to: {color: '#FF0000'},
+            to: {color: '#FF5252'},
             step: (state, bar) => {
+                bar.setText(Math.ceil(60 * (1 - this.timer)));
                 bar.path.setAttribute('stroke', state.color);
             }
         });
     }
-
     startTimer() {
-        this.timer = 0.0
-        this.bar = this.startProgress("#timerBar");
+            this.timer = 0.0
+            this.bar = this.startProgress("#timerBar");
+
         return setInterval(() => {
-            this.timer += this.interval / this.duration;
-            if (this.timer > 1.0) {
-                this.timerFlage = true;
-                this.getNextQuestion();
-            }
-            this.bar.animate(this.timer);
+            setTimeout(()=>{
+                this.timer += this.interval / this.duration;
+                if (this.timer > 1.0) {
+                    this.timerFlage = true;
+                    this.getNextQuestion();
+                }
+                this.bar.animate(this.timer);
+            },1000)
         }, this.interval);
     };
 

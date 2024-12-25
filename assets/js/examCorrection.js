@@ -26,18 +26,21 @@ export class ExamCorrection {
     }
 
     examResultChart(resultId) {
-        document.querySelector("#examResult").classList.remove("d-none");
+        const examResult = document.querySelector("#examResult");
 
+        // Smoothly fade in the result section with a slide effect
+        examResult.classList.remove("d-none");
+        examResult.classList.add('animate__animated', 'animate__fadeInUp');
         this.bar = new ProgressBar.SemiCircle(resultId, {
             strokeWidth: 10,
             trailColor: '#eee',
             trailWidth: 5,
             easing: 'easeInOut',
-            duration: 1400,
-            from: {color: '#FF0000'},
-            to: {color: '#00FF00'},
+            duration: 2000, // Smooth progress over 2 seconds
+            from: { color: '#FF0000' }, // Start color
+            to: { color: '#00FF00' },   // End color
             text: {
-                value: '',
+                value: '', // Initial empty text
                 alignToBottom: false,
             },
             step: (state, bar) => {
@@ -46,12 +49,12 @@ export class ExamCorrection {
                 bar.text.style.color = state.color;
                 bar.text.style.fontSize = '1.5rem';
                 bar.text.style.fontWeight = 'bold';
+                bar.text.style.transition = 'color 0.5s ease'; // Smooth text color transition
             },
         });
-
-        this.bar.animate(this.#grade / this.questions.length);
-
-
+        setTimeout(()=>{
+            this.bar.animate(this.#grade / this.questions.length);
+        },1000);
     }
 
 
