@@ -119,9 +119,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ---
 
-### Best of Luck! 🎉
 
-If you have any questions, feel free to contact me or open an issue in this repository.
-```
-
-Copy and paste this content into your `README.md` file, and you're good to go! Let me know if you need further assistance.
