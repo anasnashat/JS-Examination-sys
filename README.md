@@ -1,6 +1,3 @@
-Here is the complete markdown code for the `README.md` file:
-
-
 # Simple Examinations System
 
 A web-based examination system designed to deliver a smooth and interactive quiz-taking experience. This project demonstrates core JavaScript functionality, CSS styling, and HTML structure, along with user experience features like randomized questions and answers, a timer bar, and dynamic animations.
