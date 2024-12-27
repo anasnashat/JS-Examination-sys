@@ -55,70 +55,70 @@ const questions = [
     },
     {
         question: 'What tool did ancient Egyptians use to measure the Niles flood levels?',
-            choices: ["Nilometer", "Sundial", "Pyramid", "Obelisk"],
-    correctAnswer: "Nilometer",
-    image: "assets/images/nilometer.png",
-},
-{
-    question: 'Which famous stone helped decode Egyptian hieroglyphs?',
+        choices: ["Nilometer", "Sundial", "Pyramid", "Obelisk"],
+        correctAnswer: "Nilometer",
+        image: "assets/images/nilometer.png",
+    },
+    {
+        question: 'Which famous stone helped decode Egyptian hieroglyphs?',
         choices: ["Rosetta Stone", "Emerald Tablet", "Philosophers Stone", "Alexandria Stone"],
         correctAnswer: "Rosetta Stone",
-    image: "assets/images/rosetta.png",
-},
-{
-    question: 'What was the main building material used for pyramids?',
+        image: "assets/images/rosetta.png",
+    },
+    {
+        question: 'What was the main building material used for pyramids?',
         choices: ["Sandstone", "Limestone", "Granite", "Marble"],
-    correctAnswer: "Limestone",
-    image: "assets/images/pyramid-material.png",
-},
-{
-    question: 'Which Egyptian pharaoh is famous for his golden death mask?',
+        correctAnswer: "Limestone",
+        image: "assets/images/pyramid-material.png",
+    },
+    {
+        question: 'Which Egyptian pharaoh is famous for his golden death mask?',
         choices: ["Ramesses II", "Akhenaten", "Tutankhamun", "Khufu"],
-    correctAnswer: "Tutankhamun",
-    image: "assets/images/tutankhamun.png",
-},
-{
-    question: 'What was the Egyptian symbol for eternal life called?',
+        correctAnswer: "Tutankhamun",
+        image: "assets/images/tutankhamun.png",
+    },
+    {
+        question: 'What was the Egyptian symbol for eternal life called?',
         choices: ["Scarab", "Ankh", "Djed", "Was"],
-    correctAnswer: "Ankh",
-    image: "assets/images/ankh.png",
-},
-{
-    question: 'Which famous Egyptian queen ruled as a pharaoh and wore a false beard?',
+        correctAnswer: "Ankh",
+        image: "assets/images/ankh.png",
+    },
+    {
+        question: 'Which famous Egyptian queen ruled as a pharaoh and wore a false beard?',
         choices: ["Nefertiti", "Hatshepsut", "Cleopatra", "Tiye"],
-    correctAnswer: "Hatshepsut",
-    image: "assets/images/hatshepsut.png",
-},
-{
-    question: 'What was the ancient Egyptian word for king?',
+        correctAnswer: "Hatshepsut",
+        image: "assets/images/hatshepsut.png",
+    },
+    {
+        question: 'What was the ancient Egyptian word for king?',
         choices: ["Pharaoh", "Vizier", "Nomarch", "Kaiser"],
-    correctAnswer: "Pharaoh",
-    image: "assets/images/pharaoh.png",
-},
-{
-    question: 'Which god was associated with the afterlife and resurrection?',
+        correctAnswer: "Pharaoh",
+        image: "assets/images/pharaoh.png",
+    },
+    {
+        question: 'Which god was associated with the afterlife and resurrection?',
         choices: ["Horus", "Thoth", "Osiris", "Set"],
-    correctAnswer: "Osiris",
-    image: "assets/images/osiris.png",
-},
-{
-    question: 'What material was used to make ancient Egyptian paper?',
+        correctAnswer: "Osiris",
+        image: "assets/images/osiris.png",
+    },
+    {
+        question: 'What material was used to make ancient Egyptian paper?',
         choices: ["Tree bark", "Papyrus", "Cotton", "Hemp"],
-    correctAnswer: "Papyrus",
-    image: "assets/images/papyrus.png",
-},
-{
-    question: 'Which dynasty unified Upper and Lower Egypt?',
+        correctAnswer: "Papyrus",
+        image: "assets/images/papyrus.png",
+    },
+    {
+        question: 'Which dynasty unified Upper and Lower Egypt?',
         choices: ["Fourth Dynasty", "First Dynasty", "Eighteenth Dynasty", "Ptolemaic Dynasty"],
-    correctAnswer: "First Dynasty",
-    image: "assets/images/unified-egypt.png",
-},
-{
-    question: 'What was the Valley of the Kings used for?',
+        correctAnswer: "First Dynasty",
+        image: "assets/images/unified-egypt.png",
+    },
+    {
+        question: 'What was the Valley of the Kings used for?',
         choices: ["Marketplace", "Royal burials", "Religious ceremonies", "Administrative center"],
-    correctAnswer: "Royal burials",
-    image: "assets/images/valley-kings.png",
-}
+        correctAnswer: "Royal burials",
+        image: "assets/images/valley-kings.png",
+    }
 ];
 
 export default questions;

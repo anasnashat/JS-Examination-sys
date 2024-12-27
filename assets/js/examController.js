@@ -25,37 +25,39 @@ class ExamController extends ExamGenerate {
             this.#intervalId = this.startTimer()
         }
         // console.log(this.generateExam)
-        this.question = this.generateExam[this.#questionNumber];
-        this.questionTitle = document.querySelector('#questionTitle');
-        this.questionImage = document.querySelector('#questionImage');
-        this.answersContainer = document.querySelector('#answersContainer');
+        const currentQuestion = document.querySelector("#currentQuestion");
+        const question = this.generateExam[this.#questionNumber];
+        const questionTitle = document.querySelector('#questionTitle');
+        const questionImage = document.querySelector('#questionImage');
+        const answersContainer = document.querySelector('#answersContainer');
         // this.#intervalId = this.startTimer();
-        this.questionTitle.innerHTML = this.question.question;
-        this.questionImage.src = this.question.image;
-        this.questionImage.alt = this.question.question;
-        this.questionImage.style.width = "450px";
-        this.questionImage.style.height = "130px";
+        questionTitle.innerHTML = question.question;
+        questionImage.src = question.image;
+        questionImage.alt = question.question;
+        questionImage.style.width = "450px";
+        questionImage.style.height = "130px";
 
-        this.answersContainer.innerHTML = '';
+        answersContainer.innerHTML = '';
+        currentQuestion.textContent = this.#questionNumber+1;
 
-        this.question.choices.forEach((choice, index) => {
+        question.choices.forEach((choice, index) => {
             // answersContainer.innerHTML += `<!--<input type="button" id="choice${index++}" name="choices" value="${choice}" class="w-100 p-3 mb-3">-->`
-            this.choiceInput = document.createElement('input');
-            this.choiceInput.type = 'button';
-            this.choiceInput.id = `choice${index + 1}`;
-            this.choiceInput.name = 'choices';
-            this.choiceInput.value = choice;
-            this.choiceInput.classList.add('w-100', 'pt-1', 'mb-1', 'h4', 'fs-10');
-            this.answersContainer.append(this.choiceInput);
+            const choiceInput = document.createElement('input');
+            choiceInput.type = 'button';
+            choiceInput.id = `choice${index + 1}`;
+            choiceInput.name = 'choices';
+            choiceInput.value = choice;
+            choiceInput.classList.add('w-100', 'pt-1', 'mb-1', 'h4', 'fs-10');
+            answersContainer.append(choiceInput);
         });
         this.nextButton.disabled = true;
     }
 
 
     choiceAnswer(event) {
-        this.inputsChoices = document.querySelectorAll('input');
+        const inputsChoices = document.querySelectorAll('input');
         if (event.target.tagName === "INPUT") {
-            this.inputsChoices.forEach(input => input.classList.remove("is-disabled"));
+            inputsChoices.forEach(input => input.classList.remove("is-disabled"));
             console.log(event.target);
             event.target.classList.add("is-disabled");
             this.nextButton.disabled = false;
@@ -118,27 +120,28 @@ class ExamController extends ExamGenerate {
                 },
                 autoStyleContainer: true
             },
-            from: {color: '#00FF00'},
-            to: {color: '#FF5252'},
+            from: {color: '#835b30'},
+            to: {color: '#e5071c'},
             step: (state, bar) => {
                 bar.setText(Math.ceil(60 * (1 - this.timer)));
                 bar.path.setAttribute('stroke', state.color);
             }
         });
     }
+
     startTimer() {
-            this.timer = 0.0
-            this.bar = this.startProgress("#timerBar");
+        this.timer = 0.0
+        this.bar = this.startProgress("#timerBar");
 
         return setInterval(() => {
-            setTimeout(()=>{
+            setTimeout(() => {
                 this.timer += this.interval / this.duration;
                 if (this.timer > 1.0) {
                     this.timerFlage = true;
                     this.getNextQuestion();
                 }
                 this.bar.animate(this.timer);
-            },1000)
+            }, 1000)
         }, this.interval);
     };
 
