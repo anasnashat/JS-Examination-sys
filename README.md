@@ -78,15 +78,19 @@ A web-based examination system designed to deliver a smooth and interactive quiz
 ## Screenshots
 
 - **Home Page**:
+  ![Home Page](screenshots/home.png)
+  ![Home Page](screenshots/home2.png)
   - Popup for entering the student's name.
   - Start button activation.
 
 - **Exam Page**:
+- ![Home Page](screenshots/exam.png)
   - Timer bar displayed on top.
   - A single question displayed with answer options.
   - Next button activation only after an answer is selected.
 
 - **Result Page**:
+   - ![Home Page](screenshots/result.png)
   - Displays total questions, correct answers, and user feedback.
 
 ---
