@@ -10,6 +10,7 @@ export class ExamGenerate {
         if (this.questionsArray.length < numberOfQuestions) {
             throw new Error(`no enough questions to make the exam with ${numberOfQuestions} questions you can make exam with ${numberOfQuestions} questions.`);
         }
+
         let questions = [];
         let index;
         do {
