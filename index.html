@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Examination System</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
@@ -20,12 +20,11 @@
 
 <!--<input type="hidden" id="questionIndex" value="">-->
 <section class="d-flex justify-content-center align-items-center vh-100" id="startExam">
-    <div class="card shadow-lg mx-auto border-0 rounded-4 w-75 h-75 animate__animated animate__fadeIn ">
+    <div class="card shadow-lg mx-auto border-0 rounded-4 w-75 h-75 animate__animated animate__fadeIn">
         <div class="card-body w-100 d-flex flex-column align-items-center justify-content-center">
-            <h1 class="mb-5 text-center fw-bold "> Welcome to your Examination platform </h1>
+            <h1 class="mb-5 text-center fw-bold">Welcome to your Examination platform</h1>
             <p class="mb-4 text-muted fw-bold fs-4">Are you ready to begin your assessment?</p>
-
-            <button class="fs-4 w-25 h-25 btn-lg px-5 py-3 animate__animated animate__pulse animate__infinite" id="startButton">Start The Exam</button>
+            <button class=" btn-lg px-5 py-3 animate__animated animate__pulse animate__infinite" id="startButton">Start The Exam</button>
         </div>
     </div>
 </section>
@@ -33,41 +32,31 @@
 
 
 <section class="d-none h-75" id="examPage">
-    <div class="container-fluid  d-flex flex-column p-2">
+    <div class="container-fluid d-flex flex-column p-2">
         <div class="card shadow-lg mx-auto flex-grow-1 border-0 rounded-4 w-75" id="exam">
             <div class="card-body mt-1 px-3">
-                    <div class="d-flex justify-content-between align-items-center mb-3" id="questionCounter">
-                        <h2 class="mb-2 h5" id="stName">Welcome, </h2>
-                        <h2 class="mb-2 h5">Question: <span id="currentQuestion">1</span>/<span id="totalQuestions">10</span></h2>
-                    </div>
-
+                <div class="d-flex justify-content-between align-items-center mb-3" id="questionCounter">
+                    <h2 class="mb-2 h5" id="stName">Welcome, </h2>
+                    <h2 class="mb-2 h5">Question: <span id="currentQuestion">1</span>/<span id="totalQuestions">10</span></h2>
+                </div>
                 <hr class="custom-line">
-
-                <div class="d-flex justify-content-end mb-3" id="timerBar">
-                </div>
-
+                <div class="d-flex justify-content-end mb-3" id="timerBar"></div>
                 <div class="mx-auto w-75" id="questionContainer">
-                    <h2 class=" h4 mb-3 text-center fw-bold" id="questionTitle">This is the question you should
-                        solve</h2>
-
+                    <h2 class="h4 mb-3 text-center fw-bold" id="questionTitle">This is the question you should solve</h2>
                     <div class="text-center mb-3">
-                        <img alt="Question image" class="rounded mx-auto d-block" id="questionImage"
-                             src="">
+                        <img alt="Question image" class="rounded mx-auto d-block img-fluid" id="questionImage" src="">
                     </div>
-
-                    <div class="d-grid gap-2" id="answersContainer">
-
-                    </div>
+                    <div class="d-grid gap-2" id="answersContainer"></div>
                 </div>
-
                 <div class="text-center mt-3">
-                    <button class="w-25" id="nextButton">Next</button>
+                    <button class=" w-25" id="nextButton">Next</button>
                 </div>
             </div>
         </div>
     </div>
-
 </section>
+
+
 <section class="d-flex justify-content-center align-items-center d-none vh-100" id="examResult">
     <div class="card shadow-lg mx-auto border-0 pb-5 rounded-4 w-75 ">
         <div class="card-body w-100 d-flex justify-content-center">

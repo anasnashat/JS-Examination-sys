@@ -36,7 +36,10 @@ class ExamController extends ExamGenerate {
         questionImage.alt = question.question;
         questionImage.style.width = "450px";
         questionImage.style.height = "130px";
-
+        if (window.innerWidth < 768) {
+            questionImage.style.width = "100%"; // Full width on smaller screens
+            questionImage.style.height = "auto"; // Auto height to maintain aspect ratio
+        }
         answersContainer.innerHTML = '';
         currentQuestion.textContent = this.#questionNumber+1;
 
